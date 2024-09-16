@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "@/components/Header";
+import Content from "@/components/Content";
+import Footer from "@/components/Footer";
 
+const outfit = localFont({
+  src: "./fonts/Outfit-VariableFont_wght.ttf",
+  variable: "--font-outfit",
+  weight: "100 600 900",
+});
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -26,9 +34,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${outfit.variable} ${geistSans.variable} ${geistMono.variable} antialiased font-semibold bg-gradient-to-br from-[#b787f5] to-[#743ee4]`}
       >
-        {children}
+        <div className="flex flex-col items-center justify-items-center min-h-screen  p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-outfit)] bg-[url(/assets/images/Hero-Background-notecode.svg)] bg-contain bg-no-repeat">
+          <Header />
+          <Content>
+            {children}
+            <Footer />
+          </Content>
+         
+
+        </div>
+
       </body>
     </html>
   );

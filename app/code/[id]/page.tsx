@@ -1,7 +1,7 @@
 import { EditorMonaco } from "@/components/EditorMonaco";
 
 
-export default function Home() {
+export default function Detail() {
   return (
 
 
